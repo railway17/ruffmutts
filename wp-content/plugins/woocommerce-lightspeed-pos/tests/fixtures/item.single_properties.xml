@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Item>
+    <itemID>11</itemID>
+    <systemSku readonly="true">210000000010</systemSku>
+    <defaultCost currency="USD">0</defaultCost>
+    <avgCost currency="USD">0</avgCost>
+    <discountable>true</discountable>
+    <tax>true</tax>
+    <archived>false</archived>
+    <itemType>box</itemType>
+    <serialized>false</serialized>
+    <description>Red Shirt</description>
+    <modelYear>0</modelYear>
+    <upc/>
+    <ean/>
+    <customSku>customsku</customSku>
+    <manufacturerSku/>
+    <createTime>2015-11-19T06:21:33+00:00</createTime>
+    <timeStamp>2017-01-15T05:58:57+00:00</timeStamp>
+    <publishToEcom>false</publishToEcom>
+    <categoryID>4</categoryID>
+    <taxClassID>1</taxClassID>
+    <departmentID>0</departmentID>
+    <itemMatrixID>0</itemMatrixID>
+    <manufacturerID>0</manufacturerID>
+    <seasonID>0</seasonID>
+    <defaultVendorID>0</defaultVendorID>
+    <itemECommerceID>31</itemECommerceID>
+    <ItemECommerce>
+        <itemECommerceID>32</itemECommerceID>
+        <longDescription>&lt;p&gt;Great shirt for every occasion!&lt;/p&gt;</longDescription>
+        <shortDescription>&lt;p&gt;Great shirt for every occasion!&lt;br /&gt;I love red shirts! -Kristina&lt;/p&gt;</shortDescription>
+        <weight>4</weight>
+        <width>1</width>
+        <height>2</height>
+        <length>3</length>
+        <listOnStore>false</listOnStore>
+    </ItemECommerce>
+    <Images>
+        <Image>
+            <imageID>2</imageID>
+            <description/>
+            <filename>t-shirt.png</filename>
+            <ordering>0</ordering>
+            <publicID>xb3mitzrrnnsobkodlkh</publicID>
+            <baseImageURL>https://res.cloudinary.com/lightspeed-retail/image/upload/</baseImageURL>
+            <size>650317</size>
+            <createTime>2015-11-27T19:21:33+00:00</createTime>
+            <timeStamp>2015-11-27T19:21:33+00:00</timeStamp>
+            <itemID>10</itemID>
+            <itemMatrixID>0</itemMatrixID>
+        </Image>
+    </Images>
+    <ItemShops>
+        <ItemShop>
+            <itemShopID>22</itemShopID>
+            <qoh>4</qoh>
+            <backorder>0</backorder>
+            <componentQoh>0</componentQoh>
+            <componentBackorder>0</componentBackorder>
+            <reorderPoint>0</reorderPoint>
+            <reorderLevel>0</reorderLevel>
+            <timeStamp>2017-01-15T05:58:57+00:00</timeStamp>
+            <itemID>10</itemID>
+            <shopID>1</shopID>
+            <MetaData>
+                <layaways>0</layaways>
+                <specialorders>0</specialorders>
+                <workorders>0</workorders>
+            </MetaData>
+        </ItemShop>
+    </ItemShops>
+    <CustomFieldValues>
+        <CustomFieldValue>
+            <customFieldValueID>3</customFieldValueID>
+            <customFieldID>1</customFieldID>
+            <name readonly="true">post_content</name>
+            <type readonly="true">text</type>
+            <value>Bacon ipsum dolor amet short ribs strip steak pork belly pork loin pastrami salami. Jowl beef ribs pancetta, ham hock drumstick tri-tip ball tip short loin ham venison jerky pork chop picanha. Landjaeger beef tenderloin pork belly tail ham hock doner meatloaf sirloin. Fatback ham hock tongue brisket pig shank spare ribs porchetta ground round.&#xD;
+                &#xD;
+                Ham hock short ribs rump, pork loin landjaeger alcatra sausage chuck pastrami t-bone meatball ball tip porchetta pig. Ham hock tongue fatback bacon. Bacon picanha ball tip pork venison tri-tip. Picanha bacon shankle strip steak brisket.&#xD;
+                &#xD;
+                Jowl drumstick tenderloin corned beef pork, tongue bacon rump pork loin strip steak chuck. Cupim beef ribs ribeye cow, shank fatback shoulder. Doner meatball ground round tenderloin. Frankfurter tenderloin pork chop flank.</value>
+        </CustomFieldValue>
+    </CustomFieldValues>
+    <Prices>
+        <ItemPrice>
+            <amount currency="USD">12.99</amount>
+            <useTypeID>1</useTypeID>
+            <useType readonly="true">Default</useType>
+        </ItemPrice>
+    </Prices>
+    <Tags count="1">
+        <tag>test</tag>
+    </Tags>
+</Item>

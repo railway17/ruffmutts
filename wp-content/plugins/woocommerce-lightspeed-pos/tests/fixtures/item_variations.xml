@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<Items count="4" offset="0" limit="100">
+    <Item>
+        <itemID>114</itemID>
+        <systemSku readonly="true">210000000115</systemSku>
+        <defaultCost currency="USD">0</defaultCost>
+        <avgCost currency="USD">0</avgCost>
+        <discountable>true</discountable>
+        <tax>true</tax>
+        <archived>false</archived>
+        <itemType>default</itemType>
+        <serialized>false</serialized>
+        <description>Plain Cotton T-Shirt blue s</description>
+        <modelYear>0</modelYear>
+        <upc/>
+        <ean/>
+        <customSku>1234-B-S</customSku>
+        <manufacturerSku/>
+        <createTime>2016-03-30T06:30:11+00:00</createTime>
+        <timeStamp>2018-09-23T03:46:06+00:00</timeStamp>
+        <categoryID>0</categoryID>
+        <taxClassID>1</taxClassID>
+        <departmentID>0</departmentID>
+        <itemMatrixID>25</itemMatrixID>
+        <manufacturerID>0</manufacturerID>
+        <seasonID>0</seasonID>
+        <defaultVendorID>0</defaultVendorID>
+        <ItemAttributes>
+            <attribute1>blue</attribute1>
+            <attribute2>s</attribute2>
+            <attribute3/>
+            <itemAttributeSetID>1</itemAttributeSetID>
+        </ItemAttributes>
+        <ItemECommerce>
+            <itemECommerceID>120</itemECommerceID>
+            <longDescription>Test 1 Blue small</longDescription>
+            <shortDescription/>
+            <weight>0</weight>
+            <width>0</width>
+            <height>0</height>
+            <length>0</length>
+            <listOnStore>true</listOnStore>
+        </ItemECommerce>
+        <Images>
+            <Image>
+                <imageID>212</imageID>
+                <description/>
+                <filename>blue-shirt-fancy.jpg</filename>
+                <ordering>0</ordering>
+                <publicID>p6fkjujkfgn9kefdl1uq</publicID>
+                <baseImageURL>https://res.cloudinary.com/lightspeed-retail/image/upload/</baseImageURL>
+                <size>77768</size>
+                <createTime>2016-07-12T07:18:34+00:00</createTime>
+                <timeStamp>2016-07-12T07:18:40+00:00</timeStamp>
+                <itemID>114</itemID>
+                <itemMatrixID>0</itemMatrixID>
+            </Image>
+        </Images>
+        <ItemShops>
+            <ItemShop>
+                <itemShopID>229</itemShopID>
+                <qoh>29</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:53+00:00</timeStamp>
+                <itemID>114</itemID>
+                <shopID>1</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>412</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2016-09-22T05:46:40+00:00</timeStamp>
+                <itemID>114</itemID>
+                <shopID>2</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>413</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2016-09-22T05:46:40+00:00</timeStamp>
+                <itemID>114</itemID>
+                <shopID>3</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>228</itemShopID>
+                <qoh>29</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:53+00:00</timeStamp>
+                <itemID>114</itemID>
+                <shopID>0</shopID>
+            </ItemShop>
+        </ItemShops>
+        <CustomFieldValues>
+            <CustomFieldValue>
+                <customFieldValueID>23</customFieldValueID>
+                <customFieldID>2</customFieldID>
+                <name readonly="true">Metadata</name>
+                <type readonly="true">string</type>
+                <value/>
+            </CustomFieldValue>
+            <CustomFieldValue>
+                <customFieldValueID>232</customFieldValueID>
+                <customFieldID>3</customFieldID>
+                <name readonly="true">vintage</name>
+                <type readonly="true">string</type>
+                <value/>
+            </CustomFieldValue>
+            <CustomFieldValue>
+                <customFieldValueID>233</customFieldValueID>
+                <customFieldID>4</customFieldID>
+                <name readonly="true">Year</name>
+                <type readonly="true">integer</type>
+                <value>0</value>
+            </CustomFieldValue>
+        </CustomFieldValues>
+        <Prices>
+            <ItemPrice>
+                <amount currency="USD">8.99</amount>
+                <useTypeID>1</useTypeID>
+                <useType readonly="true">Default</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">8.99</amount>
+                <useTypeID>2</useTypeID>
+                <useType readonly="true">MSRP</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>3</useTypeID>
+                <useType readonly="true">Online</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">6.99</amount>
+                <useTypeID>4</useTypeID>
+                <useType readonly="true">Sale</useType>
+            </ItemPrice>
+        </Prices>
+        <Tags count="1">
+            <tag>webstore</tag>
+        </Tags>
+    </Item>
+    <Item>
+        <itemID>310</itemID>
+        <systemSku readonly="true">210000000311</systemSku>
+        <defaultCost currency="USD">0</defaultCost>
+        <avgCost currency="USD">0</avgCost>
+        <discountable>true</discountable>
+        <tax>true</tax>
+        <archived>false</archived>
+        <itemType>default</itemType>
+        <serialized>false</serialized>
+        <description>Plain Cotton T-Shirt blue m</description>
+        <modelYear>0</modelYear>
+        <upc/>
+        <ean/>
+        <customSku>BLUE_SHIRT</customSku>
+        <manufacturerSku/>
+        <createTime>2018-01-22T01:30:43+00:00</createTime>
+        <timeStamp>2018-09-23T03:46:07+00:00</timeStamp>
+        <categoryID>0</categoryID>
+        <taxClassID>1</taxClassID>
+        <departmentID>0</departmentID>
+        <itemMatrixID>25</itemMatrixID>
+        <manufacturerID>0</manufacturerID>
+        <seasonID>0</seasonID>
+        <defaultVendorID>0</defaultVendorID>
+        <ItemAttributes>
+            <attribute1>blue</attribute1>
+            <attribute2>m</attribute2>
+            <attribute3/>
+            <itemAttributeSetID>1</itemAttributeSetID>
+        </ItemAttributes>
+        <ItemECommerce>
+            <itemECommerceID>308</itemECommerceID>
+            <longDescription>Test 2 asdf</longDescription>
+            <shortDescription/>
+            <weight>0</weight>
+            <width>0</width>
+            <height>0</height>
+            <length>0</length>
+            <listOnStore>true</listOnStore>
+        </ItemECommerce>
+        <Images>
+            <Image>
+                <imageID>261</imageID>
+                <description/>
+                <filename>blue-tshirt.jpeg</filename>
+                <ordering>0</ordering>
+                <publicID>vkzndzbnwklu8g44kjcg</publicID>
+                <baseImageURL>https://res.cloudinary.com/lightspeed-retail/image/upload/</baseImageURL>
+                <size>78963</size>
+                <createTime>2018-01-22T01:31:16+00:00</createTime>
+                <timeStamp>2018-01-22T01:31:16+00:00</timeStamp>
+                <itemID>310</itemID>
+                <itemMatrixID>0</itemMatrixID>
+            </Image>
+        </Images>
+        <ItemShops>
+            <ItemShop>
+                <itemShopID>1019</itemShopID>
+                <qoh>13</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:54+00:00</timeStamp>
+                <itemID>310</itemID>
+                <shopID>1</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1020</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-01-22T01:30:43+00:00</timeStamp>
+                <itemID>310</itemID>
+                <shopID>2</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1021</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-01-22T01:30:43+00:00</timeStamp>
+                <itemID>310</itemID>
+                <shopID>3</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1018</itemShopID>
+                <qoh>13</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:55+00:00</timeStamp>
+                <itemID>310</itemID>
+                <shopID>0</shopID>
+            </ItemShop>
+        </ItemShops>
+        <CustomFieldValues>
+            <CustomFieldValue>
+                <customFieldValueID>237</customFieldValueID>
+                <customFieldID>2</customFieldID>
+                <name readonly="true">Metadata</name>
+                <type readonly="true">string</type>
+                <value/>
+            </CustomFieldValue>
+            <CustomFieldValue>
+                <customFieldValueID>238</customFieldValueID>
+                <customFieldID>3</customFieldID>
+                <name readonly="true">vintage</name>
+                <type readonly="true">string</type>
+                <value/>
+            </CustomFieldValue>
+            <CustomFieldValue>
+                <customFieldValueID>239</customFieldValueID>
+                <customFieldID>4</customFieldID>
+                <name readonly="true">Year</name>
+                <type readonly="true">integer</type>
+                <value>0</value>
+            </CustomFieldValue>
+        </CustomFieldValues>
+        <Prices>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>1</useTypeID>
+                <useType readonly="true">Default</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>2</useTypeID>
+                <useType readonly="true">MSRP</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>3</useTypeID>
+                <useType readonly="true">Online</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">8.99</amount>
+                <useTypeID>4</useTypeID>
+                <useType readonly="true">Sale</useType>
+            </ItemPrice>
+        </Prices>
+        <Tags count="1">
+            <tag>webstore</tag>
+        </Tags>
+    </Item>
+    <Item>
+        <itemID>328</itemID>
+        <systemSku readonly="true">210000000329</systemSku>
+        <defaultCost currency="USD">0</defaultCost>
+        <avgCost currency="USD">0</avgCost>
+        <discountable>true</discountable>
+        <tax>true</tax>
+        <archived>false</archived>
+        <itemType>default</itemType>
+        <serialized>false</serialized>
+        <description>Plain Cotton T-Shirt red m</description>
+        <modelYear>0</modelYear>
+        <upc/>
+        <ean/>
+        <customSku>210000000329</customSku>
+        <manufacturerSku/>
+        <createTime>2018-02-25T00:24:30+00:00</createTime>
+        <timeStamp>2018-09-23T03:46:08+00:00</timeStamp>
+        <categoryID>0</categoryID>
+        <taxClassID>1</taxClassID>
+        <departmentID>0</departmentID>
+        <itemMatrixID>25</itemMatrixID>
+        <manufacturerID>0</manufacturerID>
+        <seasonID>0</seasonID>
+        <defaultVendorID>0</defaultVendorID>
+        <ItemAttributes>
+            <attribute1>red</attribute1>
+            <attribute2>m</attribute2>
+            <attribute3/>
+            <itemAttributeSetID>1</itemAttributeSetID>
+        </ItemAttributes>
+        <ItemECommerce>
+            <itemECommerceID>326</itemECommerceID>
+            <longDescription>Test 3</longDescription>
+            <shortDescription/>
+            <weight>0</weight>
+            <width>0</width>
+            <height>0</height>
+            <length>0</length>
+            <listOnStore>true</listOnStore>
+        </ItemECommerce>
+        <ItemShops>
+            <ItemShop>
+                <itemShopID>1147</itemShopID>
+                <qoh>59</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:56+00:00</timeStamp>
+                <itemID>328</itemID>
+                <shopID>1</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1148</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-02-25T00:24:30+00:00</timeStamp>
+                <itemID>328</itemID>
+                <shopID>2</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1149</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-02-25T00:24:30+00:00</timeStamp>
+                <itemID>328</itemID>
+                <shopID>3</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1146</itemShopID>
+                <qoh>59</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:56+00:00</timeStamp>
+                <itemID>328</itemID>
+                <shopID>0</shopID>
+            </ItemShop>
+        </ItemShops>
+        <Prices>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>1</useTypeID>
+                <useType readonly="true">Default</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>2</useTypeID>
+                <useType readonly="true">MSRP</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>3</useTypeID>
+                <useType readonly="true">Online</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">4.99</amount>
+                <useTypeID>4</useTypeID>
+                <useType readonly="true">Sale</useType>
+            </ItemPrice>
+        </Prices>
+        <Tags count="1">
+            <tag>webstore</tag>
+        </Tags>
+    </Item>
+    <Item>
+        <itemID>329</itemID>
+        <systemSku readonly="true">210000000330</systemSku>
+        <defaultCost currency="USD">0</defaultCost>
+        <avgCost currency="USD">0</avgCost>
+        <discountable>true</discountable>
+        <tax>true</tax>
+        <archived>false</archived>
+        <itemType>default</itemType>
+        <serialized>false</serialized>
+        <description>Plain Cotton T-Shirt white m</description>
+        <modelYear>0</modelYear>
+        <upc/>
+        <ean/>
+        <customSku>210000000330</customSku>
+        <manufacturerSku/>
+        <createTime>2018-02-25T00:24:40+00:00</createTime>
+        <timeStamp>2018-09-23T03:46:08+00:00</timeStamp>
+        <categoryID>0</categoryID>
+        <taxClassID>1</taxClassID>
+        <departmentID>0</departmentID>
+        <itemMatrixID>25</itemMatrixID>
+        <manufacturerID>0</manufacturerID>
+        <seasonID>0</seasonID>
+        <defaultVendorID>0</defaultVendorID>
+        <ItemAttributes>
+            <attribute1>white</attribute1>
+            <attribute2>m</attribute2>
+            <attribute3/>
+            <itemAttributeSetID>1</itemAttributeSetID>
+        </ItemAttributes>
+        <ItemECommerce>
+            <itemECommerceID>327</itemECommerceID>
+            <longDescription>Test</longDescription>
+            <shortDescription/>
+            <weight>0</weight>
+            <width>0</width>
+            <height>0</height>
+            <length>0</length>
+            <listOnStore>true</listOnStore>
+        </ItemECommerce>
+        <ItemShops>
+            <ItemShop>
+                <itemShopID>1154</itemShopID>
+                <qoh>22</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:53+00:00</timeStamp>
+                <itemID>329</itemID>
+                <shopID>1</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1155</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-02-25T00:24:40+00:00</timeStamp>
+                <itemID>329</itemID>
+                <shopID>2</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1156</itemShopID>
+                <qoh>0</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-02-25T00:24:40+00:00</timeStamp>
+                <itemID>329</itemID>
+                <shopID>3</shopID>
+            </ItemShop>
+            <ItemShop>
+                <itemShopID>1153</itemShopID>
+                <qoh>22</qoh>
+                <backorder>0</backorder>
+                <componentQoh>0</componentQoh>
+                <componentBackorder>0</componentBackorder>
+                <reorderPoint>0</reorderPoint>
+                <reorderLevel>0</reorderLevel>
+                <timeStamp>2018-04-30T04:22:53+00:00</timeStamp>
+                <itemID>329</itemID>
+                <shopID>0</shopID>
+            </ItemShop>
+        </ItemShops>
+        <Prices>
+            <ItemPrice>
+                <amount currency="USD">8.99</amount>
+                <useTypeID>1</useTypeID>
+                <useType readonly="true">Default</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">8.99</amount>
+                <useTypeID>2</useTypeID>
+                <useType readonly="true">MSRP</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10</amount>
+                <useTypeID>3</useTypeID>
+                <useType readonly="true">Online</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">5.99</amount>
+                <useTypeID>4</useTypeID>
+                <useType readonly="true">Sale</useType>
+            </ItemPrice>
+        </Prices>
+        <Tags count="1">
+            <tag>webstore</tag>
+        </Tags>
+    </Item>
+</Items>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Shops count="3" offset="0" limit="100">
+    <Shop>
+        <shopID>1</shopID>
+        <name>WooCommerce - Support</name>
+        <serviceRate currency="USD">0</serviceRate>
+        <timeZone>US/Pacific</timeZone>
+        <taxLabor>false</taxLabor>
+        <labelTitle>Shop Name</labelTitle>
+        <labelMsrp>false</labelMsrp>
+        <archived>false</archived>
+        <timeStamp>2015-10-09T10:20:00+00:00</timeStamp>
+        <companyRegistrationNumber/>
+        <vatNumber/>
+        <zebraBrowserPrint>false</zebraBrowserPrint>
+        <contactID>2</contactID>
+        <taxCategoryID>1</taxCategoryID>
+        <receiptSetupID>1</receiptSetupID>
+        <ccGatewayID>1</ccGatewayID>
+        <priceLevelID>1</priceLevelID>
+    </Shop>
+    <Shop>
+        <shopID>2</shopID>
+        <name>WooCommerce - Support - Shop 1</name>
+        <serviceRate currency="USD">0</serviceRate>
+        <timeZone>US/Pacific</timeZone>
+        <taxLabor>false</taxLabor>
+        <labelTitle>Shop Name</labelTitle>
+        <labelMsrp>false</labelMsrp>
+        <archived>false</archived>
+        <timeStamp>2016-07-25T04:56:43+00:00</timeStamp>
+        <companyRegistrationNumber/>
+        <vatNumber/>
+        <zebraBrowserPrint>false</zebraBrowserPrint>
+        <contactID>3</contactID>
+        <taxCategoryID>0</taxCategoryID>
+        <receiptSetupID>2</receiptSetupID>
+        <ccGatewayID>2</ccGatewayID>
+        <priceLevelID>1</priceLevelID>
+    </Shop>
+    <Shop>
+        <shopID>3</shopID>
+        <name>WooCommerce - Support - Shop 2</name>
+        <serviceRate currency="USD">0</serviceRate>
+        <timeZone>US/Pacific</timeZone>
+        <taxLabor>false</taxLabor>
+        <labelTitle>Shop Name</labelTitle>
+        <labelMsrp>false</labelMsrp>
+        <archived>false</archived>
+        <timeStamp>2016-08-15T20:18:34+00:00</timeStamp>
+        <companyRegistrationNumber/>
+        <vatNumber/>
+        <zebraBrowserPrint>false</zebraBrowserPrint>
+        <contactID>4</contactID>
+        <taxCategoryID>0</taxCategoryID>
+        <receiptSetupID>3</receiptSetupID>
+        <ccGatewayID>3</ccGatewayID>
+        <priceLevelID>1</priceLevelID>
+    </Shop>
+</Shops>

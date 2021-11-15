@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ItemAttributeSets count="6" offset="0" limit="100">
+    <ItemAttributeSet>
+        <itemAttributeSetID>1</itemAttributeSetID>
+        <name>Color/Size</name>
+        <attributeName1>Color</attributeName1>
+        <attributeName2>Size</attributeName2>
+        <attributeName3/>
+        <system>true</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+    <ItemAttributeSet>
+        <itemAttributeSetID>2</itemAttributeSetID>
+        <name>Size</name>
+        <attributeName1/>
+        <attributeName2>Size</attributeName2>
+        <attributeName3/>
+        <system>true</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+    <ItemAttributeSet>
+        <itemAttributeSetID>3</itemAttributeSetID>
+        <name>Color</name>
+        <attributeName1>Color</attributeName1>
+        <attributeName2/>
+        <attributeName3/>
+        <system>true</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+    <ItemAttributeSet>
+        <itemAttributeSetID>4</itemAttributeSetID>
+        <name>3 Attributes</name>
+        <attributeName1>Attribute 1</attributeName1>
+        <attributeName2>Attribute 2</attributeName2>
+        <attributeName3>Attribute 3</attributeName3>
+        <system>true</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+    <ItemAttributeSet>
+        <itemAttributeSetID>5</itemAttributeSetID>
+        <name>Shapes</name>
+        <attributeName1>Cubes</attributeName1>
+        <attributeName2>Squares</attributeName2>
+        <attributeName3>Circles</attributeName3>
+        <system>false</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+    <ItemAttributeSet>
+        <itemAttributeSetID>6</itemAttributeSetID>
+        <name>Changing attributes</name>
+        <attributeName1>One</attributeName1>
+        <attributeName2>Two</attributeName2>
+        <attributeName3/>
+        <system>false</system>
+        <archived>false</archived>
+    </ItemAttributeSet>
+</ItemAttributeSets>

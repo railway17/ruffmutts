@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Shops count="1" offset="0" limit="100">
+    <Shop>
+        <shopID>1</shopID>
+        <name>Woot</name>
+        <serviceRate currency="EUR">0</serviceRate>
+        <timeZone>Europe/Paris</timeZone>
+        <taxLabor>false</taxLabor>
+        <labelTitle>Shop Name</labelTitle>
+        <labelMsrp>false</labelMsrp>
+        <archived>false</archived>
+        <timeStamp>2017-07-27T08:48:07+00:00</timeStamp>
+        <companyRegistrationNumber/>
+        <vatNumber/>
+        <zebraBrowserPrint>false</zebraBrowserPrint>
+        <contactID>2</contactID>
+        <taxCategoryID>1</taxCategoryID>
+        <receiptSetupID>1</receiptSetupID>
+        <ccGatewayID>0</ccGatewayID>
+        <gatewayConfigID readonly="true">0</gatewayConfigID>
+        <priceLevelID>1</priceLevelID>
+    </Shop>
+</Shops>

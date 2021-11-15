@@ -1,0 +1,439 @@
+*** WooCommerce Lightspeed POS Changelog ***
+2020-11-21 - version 1.9.1
+* New   - Block setting "Sale" on selective sync for LS prods if "Sale" price level was not set
+* New   - Show "Archived Lightspeed" notifications on the Woo edit product page - inclusive of variation products
+* Fix   - Fixes a bug that could cause a 500 if a Woo product is deleted during processing of sync changes
+* Fix   - Use get_regular_price() when creating a product in Lightspeed, otherwise it will use the sale  price
+* Tweak - Better notifications aroundf failed sync events
+* Tweak - New check to make sure the Woo product exists before attempting to sync changes to it
+* Tweak - Upgrade routine to set "stock_quantity" to true is deprecated "stock_quantity_checkout" setting is still lying around
+* Tweak - Add "retry_reason" to retry logic - allows passing through of errors if we exceed maximum retries of 20, instead of show generic "reached max retry count" error
+* Tweak - Add "skip benign LS error" logic so queueing does not keep retrying on benign LS error responses
+
+2020-11-11 - version 1.9.0
+* New   - **MAJOR CHANGE** ALL syncing is now done with the action scheduler queue
+* New   - Lightspeed Import page can now search for SKU values, Category values, as well as regular and sale prices via the search input
+* New   - New "Remove Uncategorized" setting which will attempt at removing the "Uncategorized" category when importing products from Lightspeed
+* New   - New "Category Sync Settings" tab that is specific to categories
+* Fix   - Bulk editing through the Woo page should now queue changes up instead of causing 429 errors
+* Fix   - Removes the "WCLSI_UPDATE_CANCELLED_ORDER" option which can cause sync failures
+* Fix   - JS fix around the case where there are 0 categories to import from Lightspeed
+* Tweak - Removed "Order Sync" settings 
+* Tweak - Removed "Manual "
+* Tweak - Disable the "Search Lightspeed" button if the plugin has not being initiated yet
+* Tweak - Sets a default '0.0' value for WCLSI_DB_VERSION_OPTION so DB migrations run better
+* Tweak - On Category import, try and match Lightspeed categories to ones that already exist in Woo
+* Tweak - When pushing a product to Lightspeed from Woo (creating a new product), refresh the page
+* Tweak - When pushing a product to Lightspeed from Woo, use the lowest level category id that is linked to Lightspeed for propery category matching
+
+2020-10-14 - version 1.8.4
+* New   - Introduces a "Sync on refund restock" setting under "Order Settings" that allows for syncing inventory on Order Refunds
+* Fix   - Fixes a sync bug where after an order is made successfully, it overwrites the Woo inventory with the original inventory in Lightspeed
+* Fix   - Fix the import table "Last Sync" column so it is now consistent with the rest date columns
+* Tweak - Enhance the API Navigator search query so it is now more flexible and can match on more strings 
+* Tweak - Reduces async WAIT_TIME from 1.2s to 1s to speed up some of the syncing calls to Lightspeed
+
+2020-09-10 - version 1.8.3
+* Fix   - Upgrade routine that will clear out bad webstore data in the DB - more specifically drops records with item_e_commerce_id values that are NULL
+* Tweak - Insert Webstore data validation - don't insert item_e_commerce data unless there's an item_e_commerce_id associated with it!
+* Tweak - Sale Price should not be synced back to Lightspeed as $0.00 if it's an empty string, should now sync back as "Default" price in Lightspeed
+* Tweak - Redirect to main Lightspeed import page after clearing out the WCLSI tables so the URL param is purged and we're not clearing out products on subsequent requests!
+
+2020-09-01 - version 1.8.2
+* Fix   - Fixes a bug where if the "WCLSI_LAST_LOAD_TIMESTAMP" option is deleted, it is not regenerated, and the check_for_new_ls_prods background job ceases to run
+* Fix   - Fixes a bug where if an product attribute failed to import, it would fail to import a matrix product. Now the plugin will log an error instead.
+* Tweak - Remove console.log() call in JS file 
+
+2020-07-29 - version 1.8.1
+* Fix   - Fixes a silent bug when updating a WooCommerce product that has an invalid or duplicate SKU, then the entire update fails. This should now be fixed and the update should continue updating other properties of the Woo product
+* Fix   - Fixes a bug that broke the "Import all" function. The import_all_lightspeed_products_ajax() method was missing a "import" arg to process_product_ajax_request() method
+* Fix   - Fixes "per page" screen option on the Lightspeed page. Should now display the correct number of products
+* Tweak - Add space after "The associated WooCommerce product is" text
+* Tweak - Renamed the "wclsi-debugger.log" to "wclsi-sync-events-log"
+* Tweak - Renamed the "wclsi-errors.log" to "wclsi-errors-log"
+
+2020-07-05 - version 1.8.0
+* Fix   - Fixes a critical bug where the "wclsi_update_cancelled_order" option does not get cleared resulting in halting all updates to Lightspeed
+
+2020-06-26 - version 1.7.9
+* New   - Introduces the Lightspeed API Navigator modal allow users to search and add specific Lightspeed products
+* Fix   - Fixes a bug where 0 quantity inventory in Lightspeed was not being updated properly in WooCommerce 
+* Fix   - Fixes the "Uncaught ReferenceError: wclsi_admin is not defined" JavaScript on the error
+* Fix   - Fixes Order Sync failure as a result of the "Uncaught ReferenceError: wclsi_admin is not defined" error
+* Fix   - Fixes an issue where for some stores, WebStore data was not getting persisted into the DB
+* Fix   - Fixes the "Uncaught TypeError: $(...).tipTip is not a function" JavaScript error when trying to use the customizer
+* Fix   - Fixed a JS UI bug that showed progress as "0/{wclsiJS.variationIds.length}" when syncing a product to LS
+* Fix   - Fixes a DB bug where for some users, duplicate insert DB errors would result from the "Check for new Lightspeed Products" background job
+* Fix   - Fixes a bug where the selective sync option for WooCommerce products was not respected on the "add to cart" WooCommerce action
+* Tweak - Renamed the "Sync with Lightspeed" button to "Create this product in Lightspeed"
+* Tweak - Moved some global JS variables to the wclsi_admin object such as WAIT_TIME, and error display methods  
+* Tweak - Renamed globals $WCLSI_SINGLE_PROD_SEARCH_PARAMS to $WCLSI_SINGLE_LOAD_RELATIONS
+* Tweak - Renamed globals $WCLSI_MATRIX_PROD_SEARCH_PARAMS to $WCLSI_MATRIX_LOAD_RELATIONS
+* Tweak - Adds a "if ( !empty( $parent_wc_prod ) )" guard for when updating variations in case the parent product WooProduct got deleted but the wc_prod_id still exists
+
+2020-05-09 - version 1.7.8
+* New   - Better notifications around failed inventory syncs, will now show up as an admin notice if a product does not sync correctly
+* New   - New "Sync on manual order cancellation" settings which allows for toggling inventory syncing on/off for order cancellations. Default is "on".  
+* Fix   - Fixes issues around variation attributes getting reset
+* Fix   - Fixes "Lightspeed API Error -  422 'qoh' must be a positive integer" - plugin did not update inventory properly on orders that had quantities greater than the ones on hand
+* Fix   - Fixes 'jQuery not defined' error on the front-end
+* Fix   - Side-effect of the 'jQuery not defined' was orders not syncing on order success - this should now be resolved
+* Fix   - Categories are appended to existing ones instead of deleting the difference in categories
+* Fix   - Fixes "PHP Notice:  Undefined variable: wclsi_matrix_id"
+* Tweak - Better class and file organization
+
+2020-04-26 - version 1.7.7
+* Fix   - Bump version due to an issue with WooCommerce deployment
+
+2020-04-26 - version 1.7.6
+* New   - Adds a new selective sync "Attributes" settings for Woo products. If enabled, will sync Woo Product Attributes on updates. This setting will be enabled by default upon upgrade
+* New   - Order Cancellation inventory sync - on manual order cancellations, the plugin will try and add inventory back to Lightspeed
+* New   - Order Sync tracking - will now keep track of which orders have been synced, and prohibit re-syncing if an order has already been synced.
+* New   - Order quantity syncing - will now sync order quantities for more accurate order syncing, instead of looking at the product quantity
+* Fix   - Fixes issues around variation attributes, plugin will now respect previously existing attributes and not overwrite them as well as other fixes around variations dissapearing
+* Fix   - Products that were not checked for syncing mistakenly were updated in Lightspeed, fix now skips these products if they are not enabled for syncing
+* Fix   - Pre-existing taxonomy attributes will now inherit settings like type, has_archives, and order_by instead of overriding them on every update
+* Fix   - Fixes a "mysqli_real_escape_string() expects parameter 2 to be string" PHP warning around updating attributes
+* Tweak - Code cleanup and enhancements
+
+2020-04-17 - version 1.7.5
+* Fix   - Fixes attributes getting reset or variations not showing up if the "Auto-import Lightspeed Attributes" is not selected
+* Fix   - Fixes an issue where custom attributes or pre-existing attributes in a variable product may get removed on an update 
+
+2020-04-14 - version 1.7.4
+* New   - New setting "Auto-import Lightspeed Attributes" will automatically import attributes into the WooCommerce Product Taxonomy
+* New   - The plugin will now utilize the Product Attribute taxonomy, meaning variable products will not use custom attributes anymore, and instead will try and utilize the Product Attribute taxonomy. Custom attributes will be converted to Product Attribute terms if the plugin can find a WC Product Attribute term match.
+* New   - Adds "attr_name_1_wc_id", "attr_name_2_wc_id", and "attr_name_3_wc_id" columns to "wclsi_item_attribute_sets" table, used for importing attributes
+* Fix   - "Products Processing ..." modal should not show up for non-Lightspeed products anymore
+* Tweak - Better logging around corrupt Lightspeed records that do not have a required "itemID"
+
+2020-04-08 - version 1.7.3
+* Fix   - Plugin will no longer set "stock status" if "Stock Quantity" is unchecked under "Selective Sync for WooCommerce Product"
+* Fix   - "Processing Order ..." on the "Order Thank You" page fixed so it does not show "undefined" values
+* Fix   - Syncing products from WooCommerce to Lightspeed improved, should result in less 429 errors, especially for Variable products
+* Tweak - Optimizations around backgrounds jobs conflicting with other actions resulting in a reduction of errors
+
+2020-03-19 - version 1.7.2
+* New   - Much better handling around 429 errors - now keeps track of Lightspeed's API bucket level header, and adjusts API requests dynamically depending on bucket level
+* New   - New "Prune deleted variations" setting. On a Manual Update, deletes variations in WooCommerce that have been deleted in Lightspeed matrix products.
+* New   - New "WCLSI Poller" settings, allows users to turn background job on or off
+* New   - Settings UI is now tabbed
+* New   - wclsi-error.log now has a stack trace included in it
+* New   - Updating Variations in the WooCommerce dashboard is now more efficient and should not cause as many 429 errors
+* Fix   - Fixes some DB duplicate errors that can happen during the check_for_new_ls_prods background job, now checks if the product exists before trying to insert it
+* Tweak - Code consolidation and cleanup
+
+2020-01-01 - version 1.7.1
+* New   - New "wclsi-error" log under WooCommerce -> Status -> Logs; tracks sync errors and other various issues with the plugin
+* Fix   - If multiple items are added to the cart, the plugin would get a 429 error trying to check inventory levels in Lightspeed
+* Fix   - On checkout, the plugin can now handle updating multiple items on checkout/order completion
+* Fix   - Bulk updates on import page are now throttled and should no longer show 429 errors
+* Fix   - Image sync would throw a fatal error, now should write to error log
+* Fix   - Hotpatch for fixing NULL item_id values (only fixes simple/single products)
+* Tweak - wclsi-debugger.log will now only record active sync changes, instead of all activity    
+* Tweak - Code cleanup & optimizations
+
+2019-11-08 - version 1.7.0
+* Fix   - Fixes a major bug where WooCommerce products that have sync enabled were not pulling LightSpeed inventory before checkout
+
+2019-11-04 - version 1.6.9
+* New   - New feature "Delete Lightspeed categories cache" - remove any LS categories in the cache. Forces the plugin to stop trying to link products' categories with ones that were imported.
+* New   - New "wclsi_sync_prod_inventory" filter that filters the $wc_prod object before syncing its inventory to Lightspeed
+* Fix   - Fixes a bug that was introduced in 1.6.8 that does not re-load the "wclsi_poll" action scheduler job
+* Tweak - Enhances error and notification experience
+
+2019-10-14 - version 1.6.8
+* Fix   - Fixes a bug where stores with duplicate SKU products were not being updated via auto-sync or manual sync
+* Fix   - Fixes a bug where 'wclsi_poll' and 'check_for_new_ls_prods' action scheduler jobs show up more than once under the 'pending' section
+* Fix   - Fixes a bug where imported products with categories are automatically added to 'Uncategorized' (or whatever the default category is)
+* Fix   - Fixed a bug where imported products (but not on the sync schedule) were still being updated on Lightspeed after a WooCommerce update
+* Tweak - Re-arranges selective sync checkbox to display legacy Web Store fields
+* Tweak - Removes CSS around hiding selective sync fields
+
+2019-07-30 - version 1.6.7
+* Fix   - Fixes erroneous LS update callbacks that may have been triggered via auto polling and other product update pathways
+* Fix   - Fixes "PHP Notice: Undefined property: stdClass::$httpCode in class-wclsi-init-settings.php" due to token refresh logic
+* Tweak - Lowers chances of 429 throttling errors triggered via the "Manual Update via Lightspeed" button for variable products
+
+2019-07-05 - version 1.6.6
+* Tweak - Optimization improvements utilizing wp_object_cache (thank you Xavier)
+* Tweak - Moves the poller to Action Scheduler, allowing manual runs of syncing as well as reduced 429 errors
+* Fix   - Removes WCLSI_Cache_Lock class, should fix any database duplicate errors
+* Fix   - Deletes categories from the wp_wclsi_item_categories table when the corresponding categories in WooCommerce are deleted
+* Fix   - Fixes an issue during Lightspeed authentication where the tokens do not get parsed correctly
+
+2019-06-11 - version 1.6.5
+* Fix   - Fixes a bug where products were still importing even though the auto-import setting was set to "Do nothing"
+* Fix   - Sets sslverify to true by default, fixes the "Certificate verification disabled (sslverify=false)" error
+* Fix   - Fixes a "Duplicate Key" error around the some cache locking logic
+
+2019-06-01 - version 1.6.4
+* New   - Moves "check_for_new_ls_prods()" to an action scheduler job, the runs every 30 seconds. Also allows users to trigger the job manually.
+* Fix   - Fixes some 429 errors around the `woocommerce_update_product` action hook. This gets called multiple times and triggers a `update` Lightspeed API call erroneously
+* Fix   - Fixes "Duplicate Key" errors resulting from a bug in the new WCLSI_Cache_Lock class
+* Fix   - Fixes an error around the refresh_access_token() function where sometimes it would return a WP_Error object
+
+2019-05-29 - version 1.6.3
+* New   - Removes the need to have allow_url_fopen = on, moves image downloads to native wp_remote_get() function
+* Fix   - Fixes some issues around Javascript setTimeout() functions that were introduced in v1.6.2. Should help reduce 429 errors
+
+2019-05-28 - version 1.6.2
+* New   - Adds a new setting called "Action after auto-loading products" which allows you auto-import new Lightspeed products
+* New   - Adds a database-based cache locking class to help with reducing parallel API calls
+* New   - Adds setTimeout() calls to AJAX functions to help reduce 429 API errors related to Lightspeed API throttling
+* Tweak - Updates some deprecated Javascript functions
+* Tweak - Removes some unused code
+
+2019-04-10 - version 1.6.1
+* New   - Adds a "Stock Quantity (non-manual updates, e.g. orders)" selective sync setting specific to WooCommerce Orders, if checked it will sync inventory to Lightspeed after a WooCommerce order is completed
+* Fix   - Fixes a sync bug where image changes in Lightspeed were not being synced over to WooCommerce
+* Fix   - Fixes a sync bug that could have locked the poller from syncing for long periods of time (possibly hours)
+* Fix   - Fixes a sync bug where inventory was inadvertently being synced over to Lightspeed
+
+2019-03-28 - version 1.6.0
+* Fix   - Fixes a bug that was introduced in v1.5.9 where new LS products were not being automatically loaded
+* Fix   - Fixes a bug where attributes for variable/matrix products were not being synced over to WooCommerce correctly
+* Tweak - Changes the syncing algorithm to look back an extra 30 seconds allow some overlap in updates made in LS
+
+2019-03-20 - version 1.5.9
+* Fix   - Fixes auto-poller module where inventory changes on the Lightspeed side do not get picked up automatically
+* Tweak - Ensure to not run multiple sync calls at the same time and try and avoid 429 errors from Lightspeed
+
+2019-03-05 - version 1.5.8
+* New   - Adds a "Sync" checkbox on the import page to allow to also sync all items after they import
+* New   - Adds a "Ignore Archived Lightspeed Products" setting; if enabled, will ignore archived items in LS when items are loaded in WooCommerce
+* New   - Changes the polling interval from every 5 minutes to every 5 seconds to keep products more up to date
+* Tweak - Reduces "429 - Too many requests" error frequency
+* Tweak - More informative item counts - displays both simple and matrix item counts under the search box in the import page
+* Fix   - Stock status bugfix - sets or removes "outofstock" term under the "product_visibility" taxonomy
+* Fix   - Sync php warning bugfix - does not enable the item poller if connection to LS is not set
+
+2018-11-13 - version 1.5.7
+* New   - Re-linking a product will now match on customSku as well as systemSku
+* New   - New Item Poller class should make polling for Lightspeed products more efficient
+* New   - Item Poller class will keep items in the import table up to date (even though they have not been imported yet)
+* Fix   - Attributes with values of '0' should now be imported correctly
+* Fix   - Fixes incorrect SQL syntax for auto-loading products
+* Tweak - Better testing coverage, minor bug fixes, and DRYing up code
+
+2018-10-25 - version 1.5.6
+* Fix   - fixes a bug that does not auto-load new matrix and/or variation products from Lightspeed
+* Tweak - Better testing
+
+2018-10-12 - version 1.5.5
+* Fix   - Fixes a bug where variable/matrix attribute were not being set correctly
+* New   - Adds much better test coverage around matrix imports
+
+2018-06-03 - version 1.5.4
+* New   - Introduces selective sync for updates on Lightspeed products
+* Tweak - Better test coverage
+
+2018-02-12 - version 1.5.3
+* New   - Introduces selective sync for updates on WooCommerce products
+* Fix   - Fixes a bug that removed long and short descriptions
+* Fix   - Fixes a bug where single-store Lightspeed setups could not initialize the plugin
+* Fix   - Fixes pricing bug where matrix items were not showing pricing on the import table
+* New   - Auto-loading for imported variable products will now automatically publish new variation products
+* Tweak - Various other enhancements
+
+
+2018-01-21 - version 1.5.2
+* Fix   - Fixes a bug where products where product's visibility was not set correctly on import
+* New   - Adds a new feature to allow products to be set to either Publish or Draft upon import
+* New   - Adds sale price formatting to the import table
+* Tweak - Removes the wclsi_import_post_fields_matrix_prod filter
+* Tweak - Removes the wclsi_import_post_meta_matrix_item filter
+* Tweak - Removes the wclsi_create_post_fields_variation filter
+* Tweak - Removes the wclsi_create_post_meta_variation filter
+* Tweak - Removes the wclsi_import_post_fields_single_prod filter
+* Tweak - Removes the wclsi_import_post_meta_single_prod filter
+* Tweak - Removes the wclsi_update_post_fields_matrix_prod filter
+* Tweak - Removes the wclsi_update_post_meta_matrix_item filter
+
+2017-11-12 - version 1.5.1
+* Fix   - Fixes a bug that broke the Manual Update button
+* Tweak - Better error messaging around re-linking
+* New   - Re-linking of matrix products will now persist the sync flag for variation products
+
+2017-11-06 - version 1.5.0
+* Fix   - Fixes a bug for single stores where the "Save Changes" button did not show up in the settings page
+* New   - Re-introduces the "Re-link" feature with major enhancements
+* Tweak - Does not drop any tables when the plugin gets deleted
+
+2017-10-15 - version 1.4.9
+* New   - Introduces auto-syncing of new Lightspeed products and Categories
+* Tweak - Better error handling around refresh tokens
+
+2017-09-12 - version 1.4.8
+* New   - Syncing Sale price now available (see documentation)
+* Fix   - Bugfix where single-store Lightspeed accounts do not get initialized correctly
+* Fix   - Bugfix where prices were being rounded down (i.e. 9.99 to 9.00)
+* Fix   - Bugfix where bulk import & sync would cause a "Something went wrong" error
+
+2017-08-28 - version 1.4.7
+* Fix   - Bugfix where ancestor categories were not being applied to an imported Lightspeed product
+* Fix   - Bugfix where "same name" categories would not get imported
+* Fix   - Bugfix where the category column on the import page was not linking to the right category
+* Fix   - Bugfix where the "percent complete" value was incorrect when loading products from Lightspeed
+* Fix   - Bugfix where the "Load Lighspeed Products" button was not disabled correctly
+* Fix   - Bugfix where the "Import Categories" button was being displayed incorrectly
+
+2017-07-22 - version 1.4.6
+* Fix   - Fixes a JS bug that broke the "Load Products from Lightspeed" button
+
+2017-06-26 - version 1.4.5
+* Fix   - Better error handling
+* Fix   - Fixes a bug that did not allow products to load fully if an error occured
+
+2017-06-19 - version 1.4.4
+* Fix   - Adds refresh token logic for Aug 1st Lightspeed deadline
+* Fix   - Fixes bug where products with a single tag do not sync over correctly
+
+2017-04-11 - version 1.4.3
+* New   - Major database upgrade - moves all products to custom database tables
+* New   - Fixes major performance issues with the Lightspeed Import Page not loading
+* Tweak - Removes constant taxononmy syncing to WooCommerce
+* Fix   - Fixes a bug where categories were not syncing to WooCommerce
+* Fix   - Fixes a bug where an error would show up when syncing a product from WooCommerce to Lightspeed
+* New   - Introduces a test suite for better quality control
+* New   - Other major bugfixes and performance enhancements
+
+2017-02-12 - version 1.4.2
+* Fix   - Fixes a bug where WooCommerce products were not set to "Out of Stock" if synced inventory was 0
+* Fix   - Fixes a bug where out of stock variation products were not being synced over to Lightspeed
+* Fix   - Minor fixes to error notifications when syncing a product to Lightspeed
+
+2016-12-13 - version 1.4.1
+* New   - New feature that allows to re-link WooCommerce products back to the Lightspeed Import Page
+* Fix   - Bugfix where reloading products from Lightspeed will cause pre-imported ones to be unlinked from the Lightspeed Import Page
+
+2016-12-06 - version 1.4.0
+* New   - Bulk import enhancement that should now be faster and show you progress when bulk importing products
+* New   - Manual sync enhancement for matrix products where new variations should now be added on a manual sync
+
+2016-11-30 - version 1.3.9
+* Fix   - Fixes an inventory syncing issue (introduced in v1.3.8) for single Lightspeed stores: inventory may have not been syncing from WC to LS correctly
+* Fix   - Fixes a bug where prices for variation products were not being imported with decimal value - i.e. "10" vs "10.00"
+
+2016-11-29 - version 1.3.8
+* New   - New feature that allows for picking a primary inventory Lightspeed store to sync inventory to and from WooCommerce
+
+2016-11-19 - version 1.3.7
+* Fix   - Fixes a bug introduced in v1.3.5 that breaks the daily sync
+
+2016-10-27 - version 1.3.6
+* Fix   - Fixes a bug where an "Online" Price Level was being synced to Lightspeed
+* Fix   - Various filter hook enhancements
+
+2016-10-23 - version 1.3.5
+* Tweak - Enhancement that blocks SKU creation if SKU value already exists
+* New   - Adds the wclsi_push_wc_inventory_to_ls filter hook for better customization
+
+2016-10-18 - version 1.3.4
+* New   - Adds new filters for better customization: wclsi_import_product, wclsi_update_product, and wclsi_get_lightspeed_inventory
+
+2016-10-16 - version 1.3.3
+* Fix   - Fixes a bug where matrix/variable products were hidden if the 'Hide out of stock items from the catalog' was enabled
+* Fix   - Minor enhancements and fixes
+
+2016-09-13 - version 1.3.2
+* Fix   - Fixes a bug where matrix/variation products had their featured image get removed on updates
+* New   - Lightspeed's Custom SKU and Manufacturer SKU fields will now take priority over the 'System SKU' field on product imports
+
+2016-09-08 - version 1.3.1
+* New   - Removes 100 category cap. You can now import unlimited number of product categories
+* Fix   - Fixes a bug that does not import category data when clicking on 'Import and Sync' on a Lightspeed product
+
+2016-08-14 - version 1.3.0
+* Fix   - Fixes a bug that broke the daily sync job
+* Fix   - Fixes a bug that duplicates the feature image in a product's image gallery
+
+2016-08-01 - version 1.2.9
+* Fix   - Fixes a bug where the integration settings page did not display properly
+* Fix   - Fixes an issue where the "shop manager" role did not have access to the Lightspeed import page
+
+2016-07-27 - version 1.2.8
+* Fix   - Removes dependency on PHP v5.6+
+* Tweak - Enhances automated syncing
+
+2016-07-25 - version 1.2.7
+* Fix   - Bugfix for import custom fields from Lightspeed
+* Fix   - Bugfix for importing images in the right order from Lightspeed
+* Fix   - Bugfix for matrix product image gallery syncing from Lightspeed
+
+2016-07-12 - version 1.2.6
+* New   - Optimization for updating matrix products - reduces chances of hitting LS api rate limit
+* Fix   - Bugfix for handling empty multi-store data
+* Fix   - Bugfix for error when WooCommerce is disabled
+
+2016-06-23 - version 1.2.5
+* Fix   - Bugfix for inventory syncing on manual updates from Lightspeed to WooCommerce
+* Fix   - Bugfix for duplicate images (removes featured image duplicate files)
+* New   - Enhancement that does not overwrite WooCommerce product details
+* Tweak - Various code updates
+
+2016-06-23 - version 1.2.4
+* Fix   - Bugfix for feature image syncing from WooCommerce to Lightspeed
+* Fix   - Bugfix for ovewriting the "Manage Stock" setting for variation products
+* Fix   - Bugfix for inventory syncing
+
+2016-06-19 - version 1.2.3
+* New   - Moves API connections to oAuth
+
+2016-06-08 - version 1.2.2
+* Fix   - Fixes a bug that  won't overwrite product properties if they're not set in Lightspeed
+* New   - Adds "CustomFieldValues" to search params so now custom fields will be included on imports
+* New   - Adds search param filters on imports
+
+2016-06-02 - version 1.2.1
+* Fix   - Fixes a bug that checks stock status incorrectly and doesn't allow for back-orders
+
+2016-05-22 - version 1.2.0
+* Fix   - Bugfix for duplicate image uploads on product updates
+* Fix   - Bugfix for not importing long and short descriptions on simple product imports
+* Fix   - Bugfix for not pulling short description on simple product updates
+* Fix   - Bugfix for CSS impacting other WP elements
+* New   - New filter hooks for simple product imports
+
+2016-05-01 - version 1.1.9
+* New   - Improvements to filter and action hooks
+
+2016-04-19 - version 1.1.8
+* New   - Product syncing from WooCommerce to Lightspeed
+* Fix   - Misc bugfixes and enhancements
+
+2016-03-01 - version 1.1.7
+* New   - Maintain data links to existing Lightspeed-imported products after reload.
+
+2016-02-27 - version 1.1.6
+* New   - Lazy sync optimizations, minor bug fixes.
+
+2016-02-25 - version 1.1.5
+* Fix   - Fixes bug with updating matrix items, better error handling, code cleanup
+
+2016-02-21 - version 1.1.4
+* New   - Lazy syncing of inventory on page view, adding to cart, and before checkout
+
+2016-02-13 - version 1.1.3
+* New   - Performance optimizations for product rendering and actions
+
+2016-02-11 - version 1.1.2
+* Tweak - Better handling of matrix product imports
+
+2016-02-10 - version 1.1.1
+* Fix   - Fixes matrix import bug
+* Fix   - Fixes error display bug
+
+2016-01-13 - version 1.1.0
+* New   - Matrix item <> Variable product support
+* New   - LightSpeed multi-store support
+* Fix   - Various bugfixes and enhancements
+
+2016-01-04 - version 1.0.2
+* Fix   - Fixes import bug introduced in WordPress v4.4
+
+2015-12-11 - version 1.0.1
+* Fix   - Fixes LightSpeed issue where syncing with shopID 0 is not allowed.
+
+2015-09-10 - version 1.0.0
+* New   - First Release.

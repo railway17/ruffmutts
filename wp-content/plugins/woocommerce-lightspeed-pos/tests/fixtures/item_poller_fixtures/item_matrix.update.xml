@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ItemMatrix count="1" offset="0" limit="100">
+    <ItemMatrix>
+        <itemMatrixID>25</itemMatrixID>
+        <description>T-shirt - matrix polling update</description>
+        <tax>true</tax>
+        <defaultCost currency="USD">0</defaultCost>
+        <itemType>default</itemType>
+        <serialized>false</serialized>
+        <modelYear>0</modelYear>
+        <archived>false</archived>
+        <timeStamp>2016-09-22T05:46:37+00:00</timeStamp>
+        <itemAttributeSetID>1</itemAttributeSetID>
+        <manufacturerID>0</manufacturerID>
+        <categoryID>0</categoryID>
+        <defaultVendorID>0</defaultVendorID>
+        <taxClassID>1</taxClassID>
+        <seasonID>0</seasonID>
+        <departmentID>0</departmentID>
+        <itemECommerceID>114</itemECommerceID>
+        <ItemECommerce>
+            <itemECommerceID>114</itemECommerceID>
+            <longDescription>matrix polling update!</longDescription>
+            <shortDescription/>
+            <weight>10</weight>
+            <width>2</width>
+            <height>2</height>
+            <length>4</length>
+            <listOnStore>true</listOnStore>
+        </ItemECommerce>
+        <Prices>
+            <ItemPrice>
+                <amount currency="USD">11.99</amount>
+                <useTypeID>1</useTypeID>
+                <useType readonly="true">Default</useType>
+            </ItemPrice>
+            <ItemPrice>
+                <amount currency="USD">10.99</amount>
+                <useTypeID>2</useTypeID>
+                <useType readonly="true">Sale</useType>
+            </ItemPrice>
+        </Prices>
+        <Tags count="1">
+            <tag>webstore</tag>
+        </Tags>
+    </ItemMatrix>
+</ItemMatrix>
